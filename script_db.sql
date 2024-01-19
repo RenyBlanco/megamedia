@@ -37,11 +37,12 @@ DROP TABLE IF EXISTS `megamedia`.`notas` ;
 
 CREATE TABLE IF NOT EXISTS `megamedia`.`notas` (
   `idnotas` INT NOT NULL AUTO_INCREMENT,
+  `titulo` VARCHAR(150) NOT NULL,
   `tipo_nota` TINYINT NOT NULL,
   `nota` TEXT NOT NULL,
-  `idusuarios` INT NOT NULL,
   `fecha` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
-  `titulo` VARCHAR(150) NOT NULL,
+  `idusuarios` INT NOT NULL,
+  `estado` TINYINT NULL DEFAULT 1,
   PRIMARY KEY (`idnotas`),
   INDEX `fk_notas_usuarios_idx` (`idusuarios` ASC) VISIBLE,
   CONSTRAINT `fk_notas_usuarios`

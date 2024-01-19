@@ -19,7 +19,7 @@
                             <div class="alert alert-warning alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 <h5><i class="icon fas fa-exclamation-triangle"></i> Atención!</h5>
-                                <strong>El usuario a registrar, Ya Existe!</strong>
+                                <strong>La Nota a registrar, Ya Existe!</strong>
                             </div>
                         <?php } elseif ($alert == 'error1') { ?>
                             <div class="alert alert-danger alert-dismissible">
@@ -31,19 +31,19 @@
                             <div class="alert alert-success alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 <h5><i class="icon fas fa-check"></i> Atención!</h5>
-                                <strong>El usuario ha sido Registrado!</strong>
+                                <strong>La Nota ha sido Registrado!</strong>
                             </div>
                         <?php } elseif ($alert == 'modificado') { ?>
                             <div class="alert alert-info alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 <h5><i class="icon fas fa-info"></i> Atención!</h5>
-                                <strong>El usuario ha sido Modificado!</strong>
+                                <strong>La Nota ha sido Modificado!</strong>
                             </div>
                         <?php } elseif ($alert == 'eliminado') { ?>
                             <div class="alert alert-info alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 <h5><i class="icon fas fa-info"></i> Atención!</h5>
-                                <strong>El usuario ha sido Eliminado!</strong>
+                                <strong>La Nota ha sido Eliminado!</strong>
                             </div>
                     <?php }
                     } ?>
@@ -58,11 +58,11 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="float-left">
-                                <h3 style="color: gray;"><i class="fa fa-users"></i> Usuarios</h3>
+                                <h3 style="color: gray;"><i class="fa fa-newspaper"></i> Notas</h3>
                             </div>
                             <div class="float-right">
-                                <a href="<?= FOLDER_PATH . '/Usuarios/nuevoUsuario' ?>" class="btn btn-outline-primary">
-                                    <i class=" fa fa-plus-circle"></i> Nuevo Usuario
+                                <a href="<?= FOLDER_PATH . '/Notas/nuevoNota' ?>" class="btn btn-outline-primary">
+                                    <i class=" fa fa-plus-circle"></i> Nueva Nota
                                 </a>
                             </div>
                         </div>
@@ -70,45 +70,40 @@
                             <table id="example2" class="table table-hover table-bordered">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th>Nombre</th>
-                                        <th>Correo</th>
-                                        <th>Estado</th>
+                                        <th>Titulo</th>
+                                        <th>Por</th>
+                                        <th>Fecha</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    if (!empty($usuarios)) {
-                                        foreach ($usuarios as $Key => $usuario) {
-                                            if (!$usuario['estado']) {
-                                                $activo = '<span class="badge badge-danger">Eliminado</span>';
-                                            } else {
-                                                $activo = '<span class="badge badge-success">Activo</span>';
-                                            } ?>
+                                    if (!empty($notas)) {
+                                        foreach ($notas as $Key => $nota) { ?>
                                             <tr>
-                                                <td><?= htmlentities($usuario['nombre']) ?></td>
-                                                <td><?= htmlentities($usuario['correo']) ?></td>
+                                                <td><?= htmlentities($nota['titulo']) ?></td>
+                                                <td><?= htmlentities($nota['nombre']) ?></td>
                                                 <td style="text-align:center;">
-                                                    <?= $activo; ?>
+                                                    <?= htmlentities($nota['fecha']); ?>
                                                 </td>
                                                 <td>
                                                     <div class="row">
                                                         <div class="col-auto">
-                                                            <form method="post" action="<?= FOLDER_PATH . '/Usuarios/editarUsuario' ?>">
-                                                                <input name="id" type="hidden" value="<?= $usuario['idusuarios']; ?>">
+                                                            <form method="post" action="<?= FOLDER_PATH . '/Notas/editarNota' ?>">
+                                                                <input name="idnota" type="hidden" value="<?= $nota['idnotas']; ?>">
                                                                 <button type="submit" class="btn btn-warning btn-sm" title="Editar">
                                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                                 </button>
                                                             </form>
                                                         </div>
                                                         <div class="col-auto">
-                                                            <a href="#delete_<?= $usuario['idusuarios']; ?>" class="btn btn-danger btn-sm" data-toggle="modal" title="Borrar">
+                                                            <a href="#delete_<?= $nota['idnotas']; ?>" class="btn btn-danger btn-sm" data-toggle="modal" title="Borrar">
                                                                 <i class="fa-regular fa-trash-can"></i>
                                                             </a>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <?php include './App/Views/Usuarios/Borrar.php'; ?>
+                                                <?php include './App/Views/Notas/Borrar.php'; ?>
                                             </tr>
                                     <?php }
                                     } ?>
