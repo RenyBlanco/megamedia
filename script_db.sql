@@ -29,7 +29,8 @@ CREATE TABLE IF NOT EXISTS `megamedia`.`usuarios` (
   PRIMARY KEY (`idusuarios`))
 ENGINE = InnoDB;
 
-
+INSERT INTO `usuarios` (`idusuarios`, `nombre`, `correo`, `clave`, `estado`) VALUES
+(1, 'Reinaldo Blanco', 'rey.blanco@yahoo.com', '$2y$10$pyR3uWUnHnQO7GM6MkqaA.ck49rURMuP8sdJ2yi1gczjNidOlE1UC', 1);
 -- -----------------------------------------------------
 -- Table `megamedia`.`notas`
 -- -----------------------------------------------------
@@ -52,6 +53,9 @@ CREATE TABLE IF NOT EXISTS `megamedia`.`notas` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+INSERT INTO `notas` (`idnotas`, `titulo`, `tipo_nota`, `nota`, `fecha`, `idusuarios`, `estado`) VALUES
+(1, 'Prueba de nota', 1, 'Es un texto de prueba para verificar la opcion de guardar\r\n  ', '2024-01-19 09:37:47', 1, 1),
+(2, 'Prueba de Noticia', 3, 'Este texto es para probar la opcion de editar (editado)\r\n ', '2024-01-19 09:54:31', 1, 1);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
