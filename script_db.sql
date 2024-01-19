@@ -5,18 +5,18 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema megamedia
 -- -----------------------------------------------------
 DROP SCHEMA IF EXISTS `megamedia` ;
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema megamedia
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `megamedia` DEFAULT CHARACTER SET utf8 ;
 USE `megamedia` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`usuarios`
+-- Table `megamedia`.`usuarios`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `megamedia`.`usuarios` ;
 
@@ -25,12 +25,13 @@ CREATE TABLE IF NOT EXISTS `megamedia`.`usuarios` (
   `nombre` VARCHAR(100) NOT NULL,
   `correo` VARCHAR(100) NOT NULL,
   `clave` VARCHAR(254) NOT NULL,
+  `estado` TINYINT NULL DEFAULT 1,
   PRIMARY KEY (`idusuarios`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`notas`
+-- Table `megamedia`.`notas`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `megamedia`.`notas` ;
 
@@ -39,6 +40,8 @@ CREATE TABLE IF NOT EXISTS `megamedia`.`notas` (
   `tipo_nota` TINYINT NOT NULL,
   `nota` TEXT NOT NULL,
   `idusuarios` INT NOT NULL,
+  `fecha` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  `titulo` VARCHAR(150) NOT NULL,
   PRIMARY KEY (`idnotas`),
   INDEX `fk_notas_usuarios_idx` (`idusuarios` ASC) VISIBLE,
   CONSTRAINT `fk_notas_usuarios`

@@ -1,16 +1,40 @@
 <?php
 
-// Carga la libreria de plantillas 
-require_once 'libs/Smarty.class.php';
+define('BASEPATH', true);
 
-//Crea la instancia
-$smarty = new Smarty();
+require_once 'System/config.php';
+require_once 'System/core/autoload.php';
 
-//Configura las ubicaciones de plantillas, compilados, cache y configuraciones
-$smarty->setTemplateDir('templates');
-$smarty->setConfigDir('configs');
-$smarty->setCompileDir('templates_c');
-$smarty->setCacheDir('cache');
+/**
+ * Nivel de errores notificados
+ */
+error_reporting(ERROR_REPORTING_LEVEL);
 
-// Verificación de carga de libreria y configuración
-// $smarty->testInstall();
+/**
+ * Inicializa Router y detección de valores de la URI
+ */
+$router = new Router();
+
+$controller = $router->getController();
+$method = $router->getMethod();
+$param = $router->getParam();
+
+/**
+ * Validaciones e inclusión del controlador y el metodo 
+ */
+if (!CoreHelper::validateController($controller)) {
+    $controller = 'ErrorPage';
+}
+
+include PATH_CONTROLLERS . "{$controller}/{$controller}Controller.php";
+$controller .= 'Controller';
+
+if (!CoreHelper::validateMethodController($controller, $method)) {
+    $method = 'exec';
+}
+
+/**
+ * Ejecución final del controlador, método y parámetro obtenido por URI
+ */
+$controller = new $controller;
+$controller->$method($param);
