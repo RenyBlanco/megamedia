@@ -9,7 +9,7 @@ include './App/Views/Templates/MenuLateral.php';
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Tablero</h1>
+                    <h1>Bienvenidos</h1>
                 </div>
             </div>
         </div>
@@ -21,113 +21,40 @@ include './App/Views/Templates/MenuLateral.php';
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box bg-teal">
-                        <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
+                        <span class="info-box-icon"><i class="fa-regular fa-note-sticky"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Altas</span>
-                            <span class="info-box-number">41,410</span>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 70%"></div>
-                            </div>
-                            <span class="progress-description"> 70% incremento en 30 días</span>
+                            <span class="info-box-text">Notas</span>
+                            <span class="info-box-number">100</span>
                         </div> <!-- /.info-box-content -->
                     </div> <!-- /.info-box -->
                 </div> <!-- /.col -->
 
                 <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box bg-cyan">
-                        <span class="info-box-icon"><i class="far fa-thumbs-down"></i></span>
+                        <span class="info-box-icon"><i class="fa-solid fa-book"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Bajas</span>
-                            <span class="info-box-number">41,410</span>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 70%"></div>
-                            </div>
-                            <span class="progress-description"> 70% decremento en 30 días</span>
+                            <span class="info-box-text">Articulos</span>
+                            <span class="info-box-number">10</span>
+
                         </div> <!-- /.info-box-content -->
                     </div> <!-- /.info-box -->
                 </div> <!-- /.col -->
 
                 <div class="col-md-3 col-sm-6 col-12">
                     <div class="info-box bg-blue">
-                        <span class="info-box-icon"><i class="fa-solid fa-truck-moving"></i></span>
+                        <span class="info-box-icon"><i class="fa-regular fa-newspaper"></i></span>
                         <div class="info-box-content">
-                            <span class="info-box-text">Traslados</span>
-                            <span class="info-box-number">41,410</span>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 70%;  color:black;"></div>
-                            </div>
-                            <span class="progress-description"> 70% incremento en 30 días</span>
+                            <span class="info-box-text">Noticias</span>
+                            <span class="info-box-number">25</span>
+
                         </div> <!-- /.info-box-content -->
                     </div> <!-- /.info-box -->
                 </div> <!-- /.col -->
-                <div class="col-md-3 col-sm-6 col-12">
-                    <div class="info-box bg-purple">
-                        <span class="info-box-icon"><i class="fa-solid fa-cart-plus"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">Compras</span>
-                            <span class="info-box-number">41,410</span>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 70%"></div>
-                            </div>
-                            <span class="progress-description"> 70% incremento en 30 días</span>
-                        </div> <!-- /.info-box-content -->
-                    </div> <!-- /.info-box -->
-                </div> <!-- /.col -->
+
             </div> <!-- /.row -->
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card card-orange shadow-lg">
-                        <div class="card-header">
-                            <h3 class="card-title">Alarma vida útil</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                            </div> <!-- /.card-tools -->
-                        </div> <!-- /.card-header -->
-                        <div class="card-body">
-                            The body of the card
-                        </div> <!-- /.card-body -->
-                    </div> <!-- /.card -->
-                </div> <!-- /.col -->
-                <div class="col-md-3">
-                    <div class="card card-orange shadow-lg">
-                        <div class="card-header">
-                            <h3 class="card-title">Alarma stock mínimo</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                            </div> <!-- /.card-tools -->
-                        </div> <!-- /.card-header -->
-                        <div class="card-body">
-                            The body of the card
-                        </div> <!-- /.card-body -->
-                    </div> <!-- /.card -->
-                </div> <!-- /.col -->
-                <div class="col-md-3">
-                    <div class="card card-orange shadow-lg">
-                        <div class="card-header">
-                            <h3 class="card-title">Alarma por vencimiento</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                            </div> <!-- /.card-tools -->
-                        </div> <!-- /.card-header -->
-                        <div class="card-body">
-                            The body of the card
-                        </div> <!-- /.card-body -->
-                    </div> <!-- /.card -->
-                </div> <!-- /.col -->
-                <div class="col-md-3">
-                    <div class="card card-orange shadow-lg">
-                        <div class="card-header">
-                            <h3 class="card-title">Alarma </h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                            </div> <!-- /.card-tools -->
-                        </div> <!-- /.card-header -->
-                        <div class="card-body">
-                            The body of the card
-                        </div> <!-- /.card-body -->
-                    </div> <!-- /.card -->
-                </div> <!-- /.col -->
-            </div> <!-- /.row -->
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XK-kQW_Y7pY?si=cE3iAAm8B7z9rX5S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
             <hr>
 
         </div>

@@ -20,6 +20,11 @@ class HomeModel extends Model
    */
   public function getUser($id)
   {
-    return $this->db->query("SELECT * FROM `usuarios` WHERE `id` = $id")->fetch_array(MYSQLI_ASSOC);
+    return $this->db->query("SELECT * FROM `usuarios` WHERE `idusuarios` = $id")->fetch_array(MYSQLI_ASSOC);
+  }
+
+  public function getValores($id)
+  {
+    return $this->db->query("SELECT SUM(tipo_nota) FROM notas WHERE idusuarios = $id");
   }
 }

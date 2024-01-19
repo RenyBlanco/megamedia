@@ -20,6 +20,19 @@
 
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= ASSETS . '/dist/css/adminlte.min.css' ?>">
+    <!-- Etiqueta global del sitio (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            'send_page_view': true
+        });
+    </script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

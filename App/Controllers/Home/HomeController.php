@@ -18,7 +18,7 @@ class HomeController extends Controller
     private $session;
 
     /**
-     * Inicializa valores 
+     * Inicializa valores
      */
     public function __construct()
     {
@@ -44,6 +44,9 @@ class HomeController extends Controller
     public function show()
     {
         $this->render(__CLASS__);
+
+        $valores = $this->model->todos();
+        $this->render(__CLASS__, $view, array('usuarios' => $usuarios, 'alert' => $alert));
     }
 
     public function logout()
